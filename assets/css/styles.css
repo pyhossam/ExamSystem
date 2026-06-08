@@ -12,7 +12,8 @@
    08. Process / Timeline
    09. Tables / Status
    10. CTA / Footer
-   11. Responsive
+   11. Unified Exam Page
+   12. Responsive
 ========================================================= */
 
 :root {
@@ -188,7 +189,11 @@ body {
   font-weight: 900;
   letter-spacing: -.5px;
 }
-
+.section-titleWhite {
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
 .section-subtitle {
   max-width: 820px;
   margin: auto;
@@ -411,7 +416,207 @@ body {
   background: #071b33;
 }
 
-/* 11. Responsive */
+/* 11. Unified Exam Page */
+.unified-page {
+  --primary: #06233f;
+  --primary2: #0b355f;
+}
+
+.unified-page .navbar {
+  background: rgba(6, 35, 63, .94);
+  backdrop-filter: blur(16px);
+  border-bottom-color: rgba(255, 255, 255, .12);
+}
+
+.unified-page .navbar .nav-link {
+  font-weight: 800;
+}
+
+.unified-page .hero {
+  min-height: 94vh;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(14, 165, 233, .25), transparent 28%),
+    radial-gradient(circle at 82% 20%, rgba(249, 115, 22, .2), transparent 24%),
+    linear-gradient(135deg, #061a31 0%, #08345d 48%, #071b33 100%);
+}
+
+.unified-page .hero::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, #000, transparent 86%);
+}
+
+.hero-orb {
+  position: absolute;
+  bottom: -160px;
+  left: -160px;
+  width: 420px;
+  height: 420px;
+  background: linear-gradient(135deg, rgba(14, 165, 233, .18), rgba(249, 115, 22, .14));
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 50%;
+}
+
+.unified-page .hero-card {
+  background: rgba(255, 255, 255, .09);
+  border-radius: 32px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .32);
+  backdrop-filter: blur(14px);
+}
+
+.unified-page .badge-soft {
+  gap: .5rem;
+  padding: .55rem 1rem;
+  color: #dff7ff;
+  font-weight: 900;
+  background: rgba(14, 165, 233, .13);
+  border-color: rgba(125, 211, 252, .28);
+  border-radius: 999px;
+}
+
+.unified-page .section-pad {
+  padding: 92px 0;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.unified-page .section-title {
+  color: var(--primary);
+}
+
+.unified-page .section-subtitle {
+  max-width: 880px;
+}
+
+.unified-kpi {
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-kpi::after {
+  position: absolute;
+  bottom: -42px;
+  left: -42px;
+  width: 120px;
+  height: 120px;
+  content: "";
+  background: rgba(14, 165, 233, .08);
+  border-radius: 50%;
+}
+
+.unified-kpi .num {
+  margin-bottom: .25rem;
+  color: var(--primary);
+  font-size: 2.6rem;
+}
+
+.unified-kpi .label {
+  position: relative;
+  z-index: 1;
+  line-height: 1.75;
+}
+
+.system-card {
+  padding: 32px;
+  border-radius: 30px;
+}
+
+.system-card:hover {
+  box-shadow: 0 28px 70px rgba(15, 23, 42, .13);
+}
+
+.system-logo {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--blue), var(--primary2));
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(14, 165, 233, .24);
+}
+
+.system-logo.orange {
+  background: linear-gradient(135deg, var(--orange), #b9460b);
+  box-shadow: 0 12px 30px rgba(249, 115, 22, .22);
+}
+
+.icon-box.dark {
+  color: var(--primary);
+  background: #e2e8f0;
+}
+
+.unified-page .process::before {
+  opacity: .24;
+}
+
+.unified-page .process-step .circle {
+  background: linear-gradient(135deg, var(--blue), var(--primary2));
+}
+
+.unified-page .security-card {
+  padding: 28px;
+  border-radius: 26px;
+  backdrop-filter: blur(10px);
+}
+
+.unified-page .security-card i {
+  font-size: 2.1rem;
+}
+
+.comparison-table {
+  border-radius: 26px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  text-align: center;
+}
+
+.comparison-table th {
+  background: var(--primary);
+}
+
+.comparison-table td {
+  font-weight: 700;
+}
+
+.tech-badge {
+  display: inline-flex;
+  gap: .4rem;
+  align-items: center;
+  padding: .55rem .9rem;
+  margin: .25rem;
+  color: #18324c;
+  font-size: .92rem;
+  font-weight: 900;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+}
+
+.unified-page .cta {
+  padding: 48px;
+  background: linear-gradient(135deg, var(--blue), var(--primary));
+  border-radius: 34px;
+  box-shadow: 0 24px 70px rgba(14, 165, 233, .22);
+}
+
+.unified-page .footer {
+  padding: 44px 0;
+  background: #06162a;
+}
+
+/* 12. Responsive */
 @media (max-width: 991px) {
   .hero {
     min-height: auto;
@@ -424,5 +629,13 @@ body {
 
   .display-3 {
     font-size: 2.2rem;
+  }
+
+  .unified-page .hero {
+    padding-bottom: 70px;
+  }
+
+  .unified-page .section-pad {
+    padding: 68px 0;
   }
 }

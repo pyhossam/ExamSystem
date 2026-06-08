@@ -18,6 +18,7 @@ function initializeCharts() {
   const questionTypesCanvas = document.getElementById("questionTypes");
   const difficultyCanvas = document.getElementById("difficultyChart");
   const reportsCanvas = document.getElementById("reportsChart");
+  const analyticsCanvas = document.getElementById("analyticsChart");
 
   if (questionTypesCanvas) {
     new Chart(questionTypesCanvas, {
@@ -113,6 +114,45 @@ function initializeCharts() {
           r: {
             beginAtZero: true,
             max: 100
+          }
+        }
+      }
+    });
+  }
+
+  if (analyticsCanvas) {
+    new Chart(analyticsCanvas, {
+      type: "radar",
+      data: {
+        labels: ["Students", "Exams", "CLO", "Security", "Operations", "Executive"],
+        datasets: [{
+          label: "Unified Analytics Coverage",
+          data: [94, 92, 90, 88, 95, 91],
+          borderColor: "#0ea5e9",
+          backgroundColor: "rgba(14,165,233,.18)",
+          pointBackgroundColor: "#f97316",
+          pointBorderColor: "#ffffff",
+          pointRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            rtl: true,
+            textDirection: "rtl"
+          }
+        },
+        scales: {
+          r: {
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              display: false
+            }
           }
         }
       }
